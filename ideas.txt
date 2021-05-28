@@ -1,0 +1,64 @@
+The idea is like version control meets migrations but only for a 
+pre -determined amount of changes. Useable with any Python code 
+
+Q: Meannt to be run as CLI, in Python, or just Django 
+
+A: CLI. Use SQL Alchemy to create models, and access a store IF configured. 
+    Allow configurations opeionts in Django 
+
+Q: How to find chaneable code 
+    1. comments #<:CHANGE ME:>
+        cons: Comments can cause confusion
+        ** This allows for code re-usability and will not affect code if 
+        package not installed
+
+    2 decorators/properties @switch_mode('NAME_OF_ATTR')
+        variables would have to be registered 
+        replaceable_var = switch_mode.connect('Name of attr')
+A: 1.
+
+sceneario 1
+ - 2 config files, one has change from, to change to 
+e.m
+ first.py 
+    debug=True
+second.py 
+    debug=alse
+
+scenario 2 
+    - 1 config file with dictionary of changes
+    data = {}
+
+sceneario 3 
+    - use like djhango migrations, acces a backend change files 
+    - record state. Check state 
+
+    first.py 
+    debug=true 
+
+    cycle: requerst change -> check if change has been made -> check 
+        what been changed -> determine where to update save instance ->
+        or not change
+
+A: Allows for changes either with module or with dict but indicate if no
+    reverse is found
+
+Initial implementation: (Cambia to var changes value, unles func then delcare end)
+    All code change: 
+        cambia set
+                    *                   *
+        <^MOCK^> <^MOCK^> <^BLOCK^> <^BLOCK^>
+
+        cambia normalize (returns all to original state)
+
+        These will be defined in:
+            A. separate module call subs or (replacement)
+            B. Or in CLI (really only good for var, not functions)
+                cambia set MOCK
+        
+# STATE
+    saving state in dirs on table. If tables. Start fresh every seession? Then whats the end? a timer? 
+    command table -> Original String Table x replacement string -> order of application
+    ex. 1. MOCK            1.debug=True                 1.debug=False
+                            FK Mock                     2.debug=Lame 
+                           2.fih=7 (same or diff)                      3. debug-Shiit     

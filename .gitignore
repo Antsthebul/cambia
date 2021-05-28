@@ -1,0 +1,12 @@
+#venvs
+venv/
+
+# MISC 
+*.txt
+
+# Cache
+__pycache__/
+*.pyc
+
+# IDE settings 
+.vscode
