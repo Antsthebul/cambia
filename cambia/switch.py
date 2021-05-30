@@ -2,7 +2,7 @@ import argparse
 
 def main():
 	parser = argparse.ArgumentParser(
-        description="Implement quick edits to files", prog="Switch_mode"
+        description="Implement quick edits to files", prog="Cambia"
     )
     parser.add_argument(
         "-m",
