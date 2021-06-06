@@ -1,3 +1,3 @@
-from .switch import main
+from .switch import run
 
-main(prog="Cambia")
+run(prog="Cambia")
