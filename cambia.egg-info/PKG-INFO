@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: cambia
+Version: 0.0.1
+Summary: Easy way to swap test variables/code blocks
+Home-page: https://github.com/Antsthebul/cambia
+Author: Antsthebul
+Author-email: anthony.allen.srt@gmail.com
+License: UNKNOWN
+Description: # Cambia
+
+        ## Where "sed" meets version control
+
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License (GPL)
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown

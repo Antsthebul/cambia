@@ -1,15 +1,16 @@
-import importlib
-import os
-from pathlib import Path
+print("yo")
 
-from .config import *
-from .switch import *
+from pathlib import Path
+import os
+import importlib
+
 
 location = os.getcwd()
 if "switchconf.py" not in os.listdir(location):
     raise ImproperlyConfigured
 else:
+    print("yo")
     file = Path(location)
-    mod = importlib.import_module(".switchconf", package=file.name)
-    print(mod.CAMBIA_VARIABLES)
+    importlib.import_module(file.name + ".switchconf.py")
+    print(CAMBIA_VARIABLES)
     run(prog="Cambia")
